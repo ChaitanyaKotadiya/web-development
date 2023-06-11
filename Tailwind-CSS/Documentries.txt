@@ -1,0 +1,6 @@
+>>>  Square Baracktes Notation Is Important
+>>> @layer components {
+	.btm{
+		@apply css
+	}
+}
