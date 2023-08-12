@@ -1,0 +1,285 @@
+index.html
+-------------
+This is the index file that displays when the react app opens in the web browser. It
+contains the HTML template of the react application.
+index.html file is the root file of the react app. Everything will be rendered through
+it on the front end. So, Don’t try to change & remove this file from the public folder.
+Note – index.html must exist in the public folder and you must not delete it
+otherwise you will get an error.
+
+logo192.png & logo512.png
+----------------------------
+These are the logos of react js. It is placed just for the initial view of react app. you
+can remove/leave it depends on you
+
+manifest.json
+-------------
+manifest.json provides the metadata like short_name, name & icons in the form of
+JSON for a react application. It may be installed on the mobile or desktop. So that
+you can directly open the react application with its installed favicon.
+Due to the manifest.json file, users get a notification to install react application on
+their mobile or desktop.
+You must not remove manifest.json but you can modify JSON values according to
+your project
+
+robots.txt
+-------------------
+The robot.txt file is given just for SEO purposes. As a developer, you need not do
+anything with this file. This file is not related to development.
+
+src
+------
+In the src folder, You can put all the js, CSS, images, components file & other
+assets of your projects.
+
+App.css
+-------------
+App.css file contains a default CSS code and import into the App.js file. It is also
+global, you can import another file. You can create your own CSS file like App.css
+but make sure that its name must start with the uppercase letter and.
+for example – Myapp.css
+
+App.js
+------------
+App.js is a parent component file of your react app. It is imported into the index.js
+file to render content/HTML in the root element that remains in public/HTML.
+You can also create your own component file according to App.js but make sure
+that its extension must be .js and its name must start with an uppercase letter.
+for example – Myapp.js
+
+App.test.js
+---------------------
+App.test.js gives us a testing environment. Basically, it’s written code to protect
+the react application to be crashed.
+We also need not modify & remove this file from the react application.
+
+index.css
+--------------
+index.css file contains some default css code for index.js. You can modify/add
+some new CSS code according to your project design pattern.
+
+index.js
+------------
+index.js file is an entry point of react app. Means that all the component renders
+through this file to the index.html.
+Basically, your application executes properly with the help of index.js. Even all the
+js files of components are imported in this file.
+for example – As App.js file is imported with using import App from './App' . you
+also have to import your own Myapp.js file using the import Myapp from
+'./Myapp';
+
+logo.svg
+-----------------
+This is the default logo of react js. You can remove it and place your project logo.
+
+reportWebVital.js
+--------------------------
+reportWebVital.js is related to the speed of your application. You also need not to
+do anything with this file.
+
+.gitignore
+--------------------
+.gitignore file is used to ignore those files that have not to be pushed to the git.
+
+package-lock.json
+-------------------
+package-lock.json file maintains a version of installed dependencies.
+
+README.md
+----------------
+In this file, Some instructions are written to configure and set up the react
+application. Even you can also write more instructions for your project that will
+help the developer to configure it easily.
+
+function Avatar() {
+const pic = ‘img.png';
+const description = 'test image';
+return (
+<img
+className="pic"
+src={pic}
+alt={description}
+/>
+);
+}
+export default Avatar;
+
+function Subtraction() {
+return(
+<div>
+<h1 style={{backgroundColor:'red',color:'#fff'}}>Subtraction : {7-4}</h1>
+</div>
+)
+};
+
+React Events
+----------------------------------------------------------------
+Inside The Html 
+<button onclick="demofunction ()">
+LJ University
+</button>
+
+Inside the React
+<button onClick = { demoFunction }>
+LJ University
+</button>
+
+List and Keys
+--------------------------
+ Lists are very useful when it comes to developing the UI of any website.
+ Lists are mainly used for displaying menus on a website, for example, the
+navbar menu. In regular JavaScript, we can use arrays for creating lists.
+ A “key” is a special string attribute you need to include when creating lists
+of elements in React.
+ If lists do not include the key attribute, then it will give below warning. The
+warning says that each of the list items in our unordered list should have a
+unique key.
+
+React Routing
+--------------------------------
+Create React App doesn't include page routing. React Router is the most popular
+solution for page routing.
+Add React Router
+To add React Router in your application, run below command in the terminal from
+the root directory of the application:
+npm i -D react-router-dom
+    
+    BrowserRouter: It is used to keep your UI in sync with the URL. It is the
+parent component that is used to store all of the other components.
+    
+    Routes: An application can have multiple <Routes>. Routes are chosen
+based on the best match instead of being traversed in order.
+    
+    Route: It is used to define and render component based on the specified
+path. It will accept components and render to define what should be
+rendered.
+    
+    Link: Link component is used to create links to different routes and
+implement navigation around the application. It works like HTML anchor
+tag.
+
+Hooks in react js
+-----------------------------
+• Hooks can only be called inside React function components.
+• Hooks can only be called at the top level of a component.
+• Hooks cannot be conditional
+
+1. useState
+---------------------------
+The React useState Hook allows us to track state in a function component.
+State generally refers to data or properties that need to be tracking in an
+application.
+Initialize useState
+We initialize our state by calling useState in our function component.
+
+useState accepts an initial state and returns two values:
+o The current state.
+o A function that updates the state.
+
+Syntax:
+Const [current state, function to update state] =useState (initial state)
+
+2. useReducer
+-------------------------------
+The useReducer Hook is the better alternative to the useState hook and is
+generally more preferred over the useState hook when you have complex state-
+building logic or when the next state value depends upon its previous value or
+when the components are needed to be optimized.
+You can add a reducer to your component using the useReducer hook. Import the
+
+useReducer method from the library like this:
+----------------
+import { useReducer } from 'react'
+
+The useReducer method gives you a state variable and a dispatch method to make
+
+state changes. You can define state in the following way:
+-------------------------------------------
+const [state, dispatch] = useReducer(reducerFunction, initialValue)
+The reducer function contains your state logic. You can choose which state logic to
+call using the dispatch function. The state can also have some initial value similar
+to the useState hook.
+
+dispatching the request :: <button onClick={()=> dispatch({type:"increment"})}>
+
+3. useContext
+----------------------------------
+Context provides a way to pass data or state through the component tree without
+having to pass props down manually through each nested component. It is
+designed to share data that can be considered as global data for a tree of React
+components.
+How to use the context
+
+Using the context in React requires 3 simple steps:
+• creating the context,
+• providing the context,
+• consuming the context.
+
+A. Creating the context
+--------------------------
+The built-in function createContext(default) creates a context instance:
+import { createContext } from 'react';
+const Fname = createContext('Default Value'); //default value is optional
+The function accepts one optional argument: the default value.
+B. Providing the context
+---------------------------
+Context.Provider component available on the context instance is used to provide
+the context to its child components, no matter how deep they are.
+
+To set the value of context use the value prop
+< Fname.Provider value=”Test” />
+
+4. useEffect
+----------------------------------
+The useEffect Hook allows you to perform side effects in your components.
+Some examples of side effects are: fetching data, directly updating the DOM, and
+timers.
+useEffect accepts two arguments. The second argument is optional.
+useEffect(<function>, <dependency>)
+To import useEffect
+import { useEffect } from "react";
+Below is the example to understand concept of empty array and array with
+value of useEffect
+
+Write react js app to perform the tasks as asked below.
+• Add two buttons and increment count by one with each click.
+• Display alert as an effect on specified conditions.
+o Effect will be triggered only when page rendered for the 1st time.
+(empty array)
+o Effect will be triggered every time the button A is clicked. (array
+with value)
+
+React Forms
+-------------------------------
+➢ Forms are an integral part of any modern web application. It allows the users
+to interact with the application as well as gather information from the users.
+➢ Forms can perform many tasks that depend on the nature of your business
+requirements and logic such as authentication of the user, adding user,
+searching, filtering, booking, ordering, etc. A form can contain text fields,
+buttons, checkbox, radio button, etc.
+➢ In React, form data is usually handled by the components. When the data is
+handled by the components, all the data is stored in the component state.
+➢ You can control changes by adding event handlers in the onChange attribute
+and that event handler will be used to update the state of the variable.
+
+What Is The Axios Component In React
+----------------------------------------------------------------
+➢ It is a library which is used to make requests to an API, return data from the
+API, and then do things with that data in our React application.
+➢ Axios is a very popular HTTP client, which allows us to make HTTP requests
+from the browser.
+
+Installing Axios
+--------------------------------
+• In order to use Axios with React, we need to install Axios.
+It does not come as a native JavaScript API, so that's why we have to manually
+import into our project.
+• Open up a new terminal window, move to your project’s root directory, and run
+any of the following commands to add Axios to your project.
+npm install axios
+To perform this request when the component mounts, you use the useEffect hook.
+This involves
+➢ importing Axios (import axios from "axios";)
+➢ using the .get() method to make a GET request to your endpoint,
+➢ using a .then() callback to get back all of the response data.
+
